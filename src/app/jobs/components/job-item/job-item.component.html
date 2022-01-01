@@ -1,0 +1,10 @@
+<article>
+    <h3>{{job.title}}</h3>
+    <div>
+        {{job.description}}
+    </div>
+    <div>
+        <a [routerLink]="['/main', 'jobs' , 'edit', job.id]">edit</a>
+        <button class="button-delete" (click)="onDelete()">delete</button>
+    </div>
+</article>

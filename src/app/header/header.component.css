@@ -1,0 +1,11 @@
+.myNav ul {
+    background-color: #cfcfcf;
+    display: flex;
+    padding: 0;
+}
+
+.myNav ul li {
+    color: rgb(2, 2, 2);
+    list-style: none;
+    padding: 10px;
+}

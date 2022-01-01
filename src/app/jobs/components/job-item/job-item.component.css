@@ -1,0 +1,14 @@
+button {
+    margin: 0px 5px;
+    padding: 5px 10px;
+}
+
+.button-edit {
+    background-color: khaki;
+    color: #000;
+    border: 1px solid rgb(173, 162, 0);
+}
+
+.button-delete {
+    color: #000;
+}
