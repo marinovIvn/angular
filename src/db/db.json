@@ -1,22 +1,37 @@
 {
-  "jobs": [
-    {
-      "id": 1,
-      "title": "Tehnical229 support Siteground",
-      "description": "Ala 222 bala opisanie lasdlasdasdsa",
-      "author": "Gosho pora"
-    },
-    {
-      "id": 2,
-      "title": ".NET Senior / Mid 2",
-      "description": "Ala bala opisanie lasdlasdasdsa",
-      "author": "Van4o 11"
-    },
-    {
-      "id": 3,
-      "title": "Javascript Developer",
-      "description": "Ala bala opisanie lasdlasdasdsa",
-      "author": "Van4o 12"
-    }
-  ]
+    "users": [{
+            "id": 1,
+            "username": "admin",
+            "password": "123",
+            "email": "admin@jobs.bg",
+            "role": "admin"
+        },
+        {
+            "id": 3,
+            "username": "organization",
+            "password": "123",
+            "email": "abb@jobs.bg",
+            "role": "organization"
+        },
+        {
+            "id": 4,
+            "username": "user",
+            "password": "123",
+            "email": "justuser@jobs.bg",
+            "role": "user"
+        }
+    ],
+    "jobs": [{
+            "id": 3,
+            "title": "Javascript Developer",
+            "description": "Ala bala opisanie lasdlasdasdsa",
+            "author": "Van4o 12"
+        },
+        {
+            "id": 4,
+            "title": "asdasdasd",
+            "description": "asdasd",
+            "author": "sdasd"
+        }
+    ]
 }
