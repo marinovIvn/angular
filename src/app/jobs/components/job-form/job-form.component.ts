@@ -11,6 +11,8 @@ import { JobsService } from '../../services/jobs.service';
   styleUrls: ['./job-form.component.css']
 })
 export class JobFormComponent implements OnInit, OnDestroy {
+ 
+  
 
   formGroup!: FormGroup;
 
@@ -24,12 +26,14 @@ export class JobFormComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    
     this.buildForm(); 
     // get value for edit
     this.route.params.pipe(
-
+     
       switchMap((params) => {
         const id = params['id'];
+        
         if (id) {
           return this.jobService.getJob$(id);
         }
@@ -41,6 +45,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
     ).subscribe({
       next: (response) => {
          this.buildForm(response);
+        
       }
     });
 
@@ -74,6 +79,11 @@ export class JobFormComponent implements OnInit, OnDestroy {
 
   // init form
   private buildForm(job?: Job): void {
+
+
+    console.log(this.formGroup);
+    
+
     this.formGroup = this.fb.group({
       id: job?.id,
       title: [job?.title || '', [Validators.required]],

@@ -10,7 +10,8 @@ import { AppRoutingModule } from './app-rounting-module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HeaderComponent
+
   ],
   imports: [
     BrowserModule,

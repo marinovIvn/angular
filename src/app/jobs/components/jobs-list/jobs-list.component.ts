@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { Job } from '../../models/job.model';
 import { JobsService } from '../../services/jobs.service';
 
@@ -12,11 +13,20 @@ export class JobsListComponent implements OnInit {
 
   jobs: Job[] = [];
 
-  constructor(private JobsService: JobsService) {
+  hasPermissions: boolean | undefined;
+
+  constructor(
+    private authService: AuthService,
+    private JobsService: JobsService
+
+    ) {
 
   }
 
   ngOnInit(): void {
+    this.hasPermissions = this.authService.hasNotPermissions('user');
+    
+
     this.JobsService.getJobs$().subscribe({
       next: (response: Job[]) => {
         //console.log(response);
