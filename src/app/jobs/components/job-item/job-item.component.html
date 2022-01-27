@@ -1,10 +1,26 @@
-<article>
-    <h3>{{job.title}}</h3>
-    <div>
-        {{job.description}}
+<div class="card my-4">
+    <div class="card-header">
+        Author: {{job.author}}
     </div>
-    <div>
-        <a [routerLink]="['/main', 'jobs' , 'edit', job.id]">edit</a>
-        <button class="button-delete" (click)="onDelete()">delete</button>
+    <div class="card-body">
+        <h4 class="card-title">{{job.title}}</h4>
+        <p class="card-text"> {{job.description}}</p>
+        <div *ngIf="hasNotPremission;else justUser">
+            <a class="btn btn-primary" [routerLink]="['/main', 'jobs' , 'edit', job.id]">edit</a>
+            <button class="button-delete btn btn-secondary" (click)="onDelete()">delete</button>
+        </div>
+        <ng-template #justUser>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                   Apply for this job
+                 </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <div class="mb-3 p-2">
+                        <label for="formFile" class="form-label">Attach your CV</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                </ul>
+            </div>
+        </ng-template>
     </div>
-</article>
+</div>

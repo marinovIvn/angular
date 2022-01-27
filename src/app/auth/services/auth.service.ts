@@ -1,7 +1,7 @@
 import { environment } from 'src/environments/environment';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable } from "rxjs";
 import { Login } from "../models/login.model";
 import { User } from "../models/user.model";
 
@@ -9,6 +9,13 @@ import { User } from "../models/user.model";
     providedIn: 'root'
 })
 export class AuthService {
+    
+    hasNotPermissionsForUser(arg0: string) {
+      throw new Error('Method not implemented.');
+    }
+
+    hasUser$ = new BehaviorSubject<boolean>(false);
+
     constructor(private http: HttpClient){
 
     }
@@ -27,7 +34,17 @@ export class AuthService {
             })
         )
     }
+    static getCurrentUser(): any {
+        return localStorage.getItem('loggedUser');
+    }
+    
 
+    logout(): void {
+       localStorage.removeItem('loggedUser'); 
+       this.setHasUser(false);
+    }
+
+    
     
     setLoggedUserInLocalStorage(user: User): void {
         delete user.password;
@@ -35,19 +52,36 @@ export class AuthService {
 
         localStorage.setItem('loggedUser', JSON.stringify(user));
 
+        this.setHasUser(true);
+
 
     }
 
     setLoggedUserFromLocalStorage(): User {
 
         const loggedUsers = JSON.parse(localStorage.getItem('loggedUser')!);
-
+        if (loggedUsers) {
+            this.setHasUser(true);
+        }
         return loggedUsers;
+    }
+
+    getHasUser$(): Observable<boolean> {
+        return this.hasUser$.asObservable();
+    }
+
+    setHasUser(value: boolean): void {
+        this.hasUser$.next(value);
     }
 
     hasNotPermissions(role: string): boolean{
         const loggedUser = this.setLoggedUserFromLocalStorage();
         return loggedUser.role !== role;
+    }
+
+    showAllusersPremission(role: string): boolean {
+        const loggedUser = this.setLoggedUserFromLocalStorage();
+        return loggedUser.role === role;
     }
 
 }

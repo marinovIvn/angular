@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 class="mt-5">
+        Hello, {{ formGroup?.get('username')?.value}}
+    </h2>
+    <h5>Edit profile</h5>
+    <a routerLink="/main" routerLinkActive="router-link-active">Back to home</a>
+
+    <form class="mt-4 my-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div>
+            <label class="form-label" for="username">Username:</label>
+            <input class="form-control" type="text" id="username" formControlName="username">
+
+        </div>
+
+        <div>
+            <label class="form-label" for="password">Password:</label>
+            <input class="form-control" type="password" id="password" formControlName="password">
+
+        </div>
+
+        <button class="btn btn-dark mt-3" type="submit" [disabled]="formGroup.invalid">
+            Update my profile
+        </button>
+
+    </form>
+    <div class="btn btn-primary mt-5" (click)="deleteUser()">
+        Delete my account
+    </div>
+
+</div>

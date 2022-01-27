@@ -1,10 +1,35 @@
-<nav class="myNav">
-    <ul>
+<nav *ngIf="hasUser " class="navbar navbar-expand-lg navbar-light  sticky-top ">
+    <div class="container">
+        <a class="navbar-brand " [routerLink]="[ '/main', 'jobs']"><img src=" /assets/images/logo.jpg "></a>
+        <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 
-        <li>
-            <a routerLink="/main/jobs">
-                Jobs
-            </a>
-        </li>
-    </ul>
+                <li class="nav-item ">
+                    <a class="nav-link " [routerLink]="[ '/main', 'jobs'] ">
+                        <i class="fa-solid fa-list "></i> Jobs
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " [routerLink]="[ '/edit', 'users' , 'change'] "><i class="fa-regular fa-user "></i> My Profile</a>
+                </li>
+                <li class="nav-item last-item ">
+                    <a class="nav-link " [routerLink]="[ '/edit', 'users' ] ">
+                        All users
+                    </a>
+                </li>
+
+
+                <li class="nav-item ">
+                    <button class="btn btn-success me-2 " type="button " (click)="onLogout() ">Loguot <i class="fa-regular fa-arrow-right-from-bracket "></i></button>
+                </li>
+            </ul>
+            <form class="d-flex ">
+                <input class="form-control me-2 " type="search " placeholder="Search " aria-label="Search ">
+                <button class="btn btn-outline-success " type="submit ">Search</button>
+            </form>
+        </div>
+    </div>
 </nav>

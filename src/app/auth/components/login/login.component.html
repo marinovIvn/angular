@@ -1,13 +1,16 @@
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="username">Username</label>
-        <input type="text" id="username" formControlName="username">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" formControlName="password">
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+<div class="login">
+    <img src="/assets/images/logo.jpg">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" formControlName="username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" formControlName="password">
+        </div>
+        <div>
+            <button class="btn btn-primary w-100" type="submit">Login</button>
+        </div>
+    </form>
+</div>
