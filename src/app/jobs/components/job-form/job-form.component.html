@@ -1,28 +1,30 @@
-<h3>{{ formGroup?.get('id')?.value ? 'Edit Book' : 'Add new' }}</h3>
-<a routerLink="/main/jobs" routerLinkActive="router-link-active">Back to jobs</a>
+<div class="container">
+    <h2 class="mt-5">{{ formGroup?.get('id')?.value ? 'Edit Jobs' : 'Add new' }}</h2>
+    <a routerLink="/main/jobs" routerLinkActive="router-link-active">Back to jobs</a>
 
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" formControlName="title">
-        <small style="color:red" *ngIf="
+    <form class="mt-4 my-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div>
+            <label class="form-label" for="title">Title:</label>
+            <input class="form-control" type="text" id="title" formControlName="title">
+            <small style="color:red" *ngIf="
             formGroup.get('title')?.touched && formGroup.get('title')?.hasError('required')
         ">This field is required!</small>
-    </div>
-    <div>
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description"></textarea>
-    </div>
-    <div>
-        <label for="author">Author:</label>
-        <input type="text" id="author" formControlName="author">
-        <small style="color:red" *ngIf="
+        </div>
+        <div>
+            <label class="form-label" for="description">Job Description</label>
+            <textarea class="form-control" id="description" formControlName="description"></textarea>
+        </div>
+        <div>
+            <label class="form-label" for="author">Author:</label>
+            <input class="form-control" type="text" id="author" formControlName="author">
+            <small style="color:red" *ngIf="
             formGroup.get('author')?.touched && formGroup.get('author')?.hasError('required')
         ">This field is required!</small>
-    </div>
+        </div>
 
-    <button type="submit" [disabled]="formGroup.invalid">
+        <button class="btn btn-primary mt-3" type="submit" [disabled]="formGroup.invalid">
         {{ formGroup?.get('id')?.value ? 'Save' : 'Add' }}
     </button>
 
-</form>
+    </form>
+</div>

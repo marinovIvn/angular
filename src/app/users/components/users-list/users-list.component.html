@@ -1,0 +1,27 @@
+<section class="container">
+
+
+    <table *ngIf="hasPermissions;else reject" class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of allusers">
+                <td>{{users.id}}</td>
+                <td>{{users.username}}</td>
+                <td>{{users.email}}</td>
+                <td>{{users.role}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #reject>The page is only available for administrators!</ng-template>
+
+
+</section>

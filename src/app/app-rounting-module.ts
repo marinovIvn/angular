@@ -20,6 +20,11 @@ const routes: Route[] = [
         path: 'main',
         loadChildren: () => import('./jobs/jobs.module').then(m => m.JobsModule),
         canLoad: [AuthGuard]
+    },
+    {
+        path: 'edit',
+        loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+        canLoad: [AuthGuard]
     }
 
 ];

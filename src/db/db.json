@@ -7,31 +7,67 @@
             "role": "admin"
         },
         {
-            "id": 3,
+            "id": 2,
             "username": "organization",
             "password": "123",
-            "email": "abb@jobs.bg",
+            "email": "org@abv.bg",
             "role": "organization"
         },
         {
-            "id": 4,
+            "id": 3,
             "username": "user",
             "password": "123",
-            "email": "justuser@jobs.bg",
+            "email": "org@abv.bg",
             "role": "user"
         }
     ],
     "jobs": [{
             "id": 3,
-            "title": "Javascript Developer",
-            "description": "Ala bala opisanie lasdlasdasdsa",
-            "author": "Van4o 12"
+            "title": "Copywriter and digital storyteller",
+            "description": "Our personality is unmistakable: we work hard, take joy in our wins and each other's successes. More than anything we embrace a straightforward approach to getting things done. We are fanatical about our customers: and when talent meets passion, success happens.",
+            "author": "Alpemo"
         },
         {
             "id": 4,
-            "title": "asdasdasd",
-            "description": "asdasd",
-            "author": "sdasd"
+            "title": "Senior Talent Management Specialist",
+            "description": "Progress is an experienced, trusted provider of products designed with customers in mind, so they can develop the applications they need, deploy where and how they want and manage it all safely and securely. ",
+            "author": "Progress"
+        },
+        {
+            "id": 5,
+            "title": "Talent Acquisition Partner",
+            "description": "Progress is an experienced, trusted provider of products designed with customers in mind, so they can develop the applications they need, deploy where and how they want and manage it all safely and securely.",
+            "author": "People <Code>"
+        },
+        {
+            "id": 6,
+            "title": "AUTOMATION QA TRAINEE",
+            "description": "Logical thinking and analytical skills;\nHigh school, university degree or academies related to programming, mathematics, informatics and computer technologies;",
+            "author": "Kamenno Bordo"
+        },
+        {
+            "id": 7,
+            "title": "Salesforce Developer",
+            "description": "Taylor & Hart (former Rare Pink) is a London based e-commerce bespoke jeweller specialising in engagement rings and wedding bands. We have graduated the famous Techstars accelerator program in Boston, USA",
+            "author": "TAYLORT & HART"
+        },
+        {
+            "id": 8,
+            "title": "Анализатор CRM",
+            "description": "Като успешна международна търговска компания, част от групата Schwarz, ние ежедневно преследваме нашата цел: Да превърнем пазаруването на нашите клиенти в невероятно клиентско преживяване. Какво ни отличава? Нашите ценности: резултати, динамика и коректност.",
+            "author": "Kafland"
+        },
+        {
+            "id": 9,
+            "title": "Senior Front-End Engineer",
+            "description": "VEDAMO - a rapidly growing and a highly innovative IT company in the field of online education with clients all over the world.",
+            "author": "Vedamo"
+        },
+        {
+            "id": 10,
+            "title": "Senior UX Designer",
+            "description": "Conducting research, interviews, surveys, observing users’ actions and behaviour to understand users’ needs, drivers and products engagement",
+            "author": "Vedamo"
         }
     ]
 }
